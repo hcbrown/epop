@@ -1,0 +1,884 @@
+--------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/glooper/Dropbox (CEPR)/Data/homestata/projects/disability/log/2022_expertwitne
+> ss_ACS/cepr_tables_ew_2016-2021.log
+  log type:  text
+ opened on:   2 Dec 2022, 13:07:12
+
+. 
+. 
+.                                         /* employment-to-population ratio (epop) */
+.                         
+. /* disabled epop by state, ages 21 to 64 */
+. tab statefip epop [aw=rndwt] if disability==1 & agewk==1 & inst==0, row nofreq
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     69.65      30.35 |    100.00 
+               alaska |     55.44      44.56 |    100.00 
+              arizona |     60.93      39.07 |    100.00 
+             arkansas |     67.51      32.49 |    100.00 
+           california |     62.32      37.68 |    100.00 
+             colorado |     53.30      46.70 |    100.00 
+          connecticut |     58.90      41.10 |    100.00 
+             delaware |     58.68      41.32 |    100.00 
+ district of columbia |     62.95      37.05 |    100.00 
+              florida |     64.07      35.93 |    100.00 
+              georgia |     63.17      36.83 |    100.00 
+               hawaii |     57.27      42.73 |    100.00 
+                idaho |     55.26      44.74 |    100.00 
+             illinois |     60.90      39.10 |    100.00 
+              indiana |     61.09      38.91 |    100.00 
+                 iowa |     53.97      46.03 |    100.00 
+               kansas |     54.65      45.35 |    100.00 
+             kentucky |     67.61      32.39 |    100.00 
+            louisiana |     65.92      34.08 |    100.00 
+                maine |     65.44      34.56 |    100.00 
+             maryland |     56.26      43.74 |    100.00 
+        massachusetts |     60.47      39.53 |    100.00 
+             michigan |     64.82      35.18 |    100.00 
+            minnesota |     51.74      48.26 |    100.00 
+          mississippi |     69.89      30.11 |    100.00 
+             missouri |     62.76      37.24 |    100.00 
+              montana |     55.38      44.62 |    100.00 
+             nebraska |     48.94      51.06 |    100.00 
+               nevada |     58.78      41.22 |    100.00 
+        new hampshire |     55.03      44.97 |    100.00 
+           new jersey |     60.19      39.81 |    100.00 
+           new mexico |     66.39      33.61 |    100.00 
+             new york |     64.97      35.03 |    100.00 
+       north carolina |     64.06      35.94 |    100.00 
+         north dakota |     44.09      55.91 |    100.00 
+                 ohio |     61.82      38.18 |    100.00 
+             oklahoma |     61.15      38.85 |    100.00 
+               oregon |     59.39      40.61 |    100.00 
+         pennsylvania |     62.07      37.93 |    100.00 
+         rhode island |     62.21      37.79 |    100.00 
+       south carolina |     65.59      34.41 |    100.00 
+         south dakota |     48.52      51.48 |    100.00 
+            tennessee |     65.60      34.40 |    100.00 
+                texas |     57.76      42.24 |    100.00 
+                 utah |     50.30      49.70 |    100.00 
+              vermont |     59.08      40.92 |    100.00 
+             virginia |     57.60      42.40 |    100.00 
+           washington |     58.64      41.36 |    100.00 
+        west virginia |     71.48      28.52 |    100.00 
+            wisconsin |     57.16      42.84 |    100.00 
+              wyoming |     50.56      49.44 |    100.00 
+----------------------+----------------------+----------
+                Total |     61.59      38.41 |    100.00 
+
+. 
+. /* all epop by state, ages 21 to 64 */
+. tab statefip epop [aw=rndwt] if agewk==1 & inst==0, row nofreq
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     30.87      69.13 |    100.00 
+               alaska |     26.16      73.84 |    100.00 
+              arizona |     27.02      72.98 |    100.00 
+             arkansas |     28.99      71.01 |    100.00 
+           california |     26.35      73.65 |    100.00 
+             colorado |     21.09      78.91 |    100.00 
+          connecticut |     22.51      77.49 |    100.00 
+             delaware |     24.91      75.09 |    100.00 
+ district of columbia |     22.90      77.10 |    100.00 
+              florida |     26.30      73.70 |    100.00 
+              georgia |     26.19      73.81 |    100.00 
+               hawaii |     22.46      77.54 |    100.00 
+                idaho |     24.75      75.25 |    100.00 
+             illinois |     23.83      76.17 |    100.00 
+              indiana |     24.19      75.81 |    100.00 
+                 iowa |     19.08      80.92 |    100.00 
+               kansas |     21.28      78.72 |    100.00 
+             kentucky |     29.62      70.38 |    100.00 
+            louisiana |     30.61      69.39 |    100.00 
+                maine |     24.26      75.74 |    100.00 
+             maryland |     21.26      78.74 |    100.00 
+        massachusetts |     21.62      78.38 |    100.00 
+             michigan |     27.12      72.88 |    100.00 
+            minnesota |     18.08      81.92 |    100.00 
+          mississippi |     31.75      68.25 |    100.00 
+             missouri |     24.32      75.68 |    100.00 
+              montana |     23.18      76.82 |    100.00 
+             nebraska |     17.44      82.56 |    100.00 
+               nevada |     26.70      73.30 |    100.00 
+        new hampshire |     19.82      80.18 |    100.00 
+           new jersey |     22.97      77.03 |    100.00 
+           new mexico |     31.53      68.47 |    100.00 
+             new york |     25.79      74.21 |    100.00 
+       north carolina |     25.91      74.09 |    100.00 
+         north dakota |     16.87      83.13 |    100.00 
+                 ohio |     24.63      75.37 |    100.00 
+             oklahoma |     27.59      72.41 |    100.00 
+               oregon |     25.62      74.38 |    100.00 
+         pennsylvania |     24.52      75.48 |    100.00 
+         rhode island |     23.63      76.37 |    100.00 
+       south carolina |     27.33      72.67 |    100.00 
+         south dakota |     18.18      81.82 |    100.00 
+            tennessee |     27.18      72.82 |    100.00 
+                texas |     25.29      74.71 |    100.00 
+                 utah |     21.77      78.23 |    100.00 
+              vermont |     21.39      78.61 |    100.00 
+             virginia |     22.19      77.81 |    100.00 
+           washington |     24.34      75.66 |    100.00 
+        west virginia |     34.51      65.49 |    100.00 
+            wisconsin |     20.06      79.94 |    100.00 
+              wyoming |     21.90      78.10 |    100.00 
+----------------------+----------------------+----------
+                Total |     25.08      74.92 |    100.00 
+
+. 
+. /* Disabled EPOP by year by state, ages 21 to 64 */
+. bysort year: tab statefip epop [aw=perwt] if disability==1 & agewk==1 & inst==0, row nofreq
+
+--------------------------------------------------------------------------------------------------
+-> year = 2016
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     72.10      27.90 |    100.00 
+               alaska |     50.61      49.39 |    100.00 
+              arizona |     64.86      35.14 |    100.00 
+             arkansas |     67.97      32.03 |    100.00 
+           california |     64.97      35.03 |    100.00 
+             colorado |     57.20      42.80 |    100.00 
+          connecticut |     60.97      39.03 |    100.00 
+             delaware |     63.83      36.17 |    100.00 
+ district of columbia |     66.23      33.77 |    100.00 
+              florida |     67.30      32.70 |    100.00 
+              georgia |     65.32      34.68 |    100.00 
+               hawaii |     59.53      40.47 |    100.00 
+                idaho |     57.09      42.91 |    100.00 
+             illinois |     64.92      35.08 |    100.00 
+              indiana |     63.10      36.90 |    100.00 
+                 iowa |     54.24      45.76 |    100.00 
+               kansas |     54.02      45.98 |    100.00 
+             kentucky |     69.03      30.97 |    100.00 
+            louisiana |     69.07      30.93 |    100.00 
+                maine |     67.65      32.35 |    100.00 
+             maryland |     57.79      42.21 |    100.00 
+        massachusetts |     61.07      38.93 |    100.00 
+             michigan |     66.42      33.58 |    100.00 
+            minnesota |     51.29      48.71 |    100.00 
+          mississippi |     71.05      28.95 |    100.00 
+             missouri |     65.80      34.20 |    100.00 
+              montana |     57.30      42.70 |    100.00 
+             nebraska |     50.15      49.85 |    100.00 
+               nevada |     57.36      42.64 |    100.00 
+        new hampshire |     54.38      45.62 |    100.00 
+           new jersey |     62.60      37.40 |    100.00 
+           new mexico |     68.45      31.55 |    100.00 
+             new york |     67.01      32.99 |    100.00 
+       north carolina |     64.81      35.19 |    100.00 
+         north dakota |     48.50      51.50 |    100.00 
+                 ohio |     64.29      35.71 |    100.00 
+             oklahoma |     63.54      36.46 |    100.00 
+               oregon |     59.89      40.11 |    100.00 
+         pennsylvania |     64.75      35.25 |    100.00 
+         rhode island |     68.51      31.49 |    100.00 
+       south carolina |     66.60      33.40 |    100.00 
+         south dakota |     47.95      52.05 |    100.00 
+            tennessee |     68.57      31.43 |    100.00 
+                texas |     60.28      39.72 |    100.00 
+                 utah |     53.77      46.23 |    100.00 
+              vermont |     58.60      41.40 |    100.00 
+             virginia |     60.45      39.55 |    100.00 
+           washington |     60.79      39.21 |    100.00 
+        west virginia |     72.12      27.88 |    100.00 
+            wisconsin |     58.38      41.62 |    100.00 
+              wyoming |     53.05      46.95 |    100.00 
+----------------------+----------------------+----------
+                Total |     63.80      36.20 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2017
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     73.01      26.99 |    100.00 
+               alaska |     59.68      40.32 |    100.00 
+              arizona |     63.06      36.94 |    100.00 
+             arkansas |     68.21      31.79 |    100.00 
+           california |     63.23      36.77 |    100.00 
+             colorado |     54.30      45.70 |    100.00 
+          connecticut |     59.58      40.42 |    100.00 
+             delaware |     62.96      37.04 |    100.00 
+ district of columbia |     55.18      44.82 |    100.00 
+              florida |     65.85      34.15 |    100.00 
+              georgia |     65.12      34.88 |    100.00 
+               hawaii |     58.66      41.34 |    100.00 
+                idaho |     56.50      43.50 |    100.00 
+             illinois |     61.24      38.76 |    100.00 
+              indiana |     61.73      38.27 |    100.00 
+                 iowa |     53.99      46.01 |    100.00 
+               kansas |     53.93      46.07 |    100.00 
+             kentucky |     69.09      30.91 |    100.00 
+            louisiana |     65.72      34.28 |    100.00 
+                maine |     67.13      32.87 |    100.00 
+             maryland |     57.42      42.58 |    100.00 
+        massachusetts |     62.42      37.58 |    100.00 
+             michigan |     66.45      33.55 |    100.00 
+            minnesota |     51.04      48.96 |    100.00 
+          mississippi |     71.25      28.75 |    100.00 
+             missouri |     64.05      35.95 |    100.00 
+              montana |     56.16      43.84 |    100.00 
+             nebraska |     48.16      51.84 |    100.00 
+               nevada |     58.93      41.07 |    100.00 
+        new hampshire |     55.02      44.98 |    100.00 
+           new jersey |     60.76      39.24 |    100.00 
+           new mexico |     66.93      33.07 |    100.00 
+             new york |     65.12      34.88 |    100.00 
+       north carolina |     65.36      34.64 |    100.00 
+         north dakota |     43.85      56.15 |    100.00 
+                 ohio |     62.95      37.05 |    100.00 
+             oklahoma |     63.37      36.63 |    100.00 
+               oregon |     62.95      37.05 |    100.00 
+         pennsylvania |     62.89      37.11 |    100.00 
+         rhode island |     57.91      42.09 |    100.00 
+       south carolina |     67.04      32.96 |    100.00 
+         south dakota |     46.78      53.22 |    100.00 
+            tennessee |     65.49      34.51 |    100.00 
+                texas |     59.77      40.23 |    100.00 
+                 utah |     50.63      49.37 |    100.00 
+              vermont |     54.08      45.92 |    100.00 
+             virginia |     58.65      41.35 |    100.00 
+           washington |     58.26      41.74 |    100.00 
+        west virginia |     75.05      24.95 |    100.00 
+            wisconsin |     59.48      40.52 |    100.00 
+              wyoming |     48.69      51.31 |    100.00 
+----------------------+----------------------+----------
+                Total |     62.73      37.27 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2018
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     71.08      28.92 |    100.00 
+               alaska |     54.08      45.92 |    100.00 
+              arizona |     61.55      38.45 |    100.00 
+             arkansas |     69.36      30.64 |    100.00 
+           california |     62.88      37.12 |    100.00 
+             colorado |     51.67      48.33 |    100.00 
+          connecticut |     60.69      39.31 |    100.00 
+             delaware |     62.34      37.66 |    100.00 
+ district of columbia |     61.74      38.26 |    100.00 
+              florida |     64.52      35.48 |    100.00 
+              georgia |     63.22      36.78 |    100.00 
+               hawaii |     55.73      44.27 |    100.00 
+                idaho |     56.75      43.25 |    100.00 
+             illinois |     61.97      38.03 |    100.00 
+              indiana |     63.15      36.85 |    100.00 
+                 iowa |     54.10      45.90 |    100.00 
+               kansas |     54.79      45.21 |    100.00 
+             kentucky |     68.44      31.56 |    100.00 
+            louisiana |     65.81      34.19 |    100.00 
+                maine |     65.89      34.11 |    100.00 
+             maryland |     55.62      44.38 |    100.00 
+        massachusetts |     62.01      37.99 |    100.00 
+             michigan |     64.29      35.71 |    100.00 
+            minnesota |     51.45      48.55 |    100.00 
+          mississippi |     72.28      27.72 |    100.00 
+             missouri |     63.79      36.21 |    100.00 
+              montana |     50.99      49.01 |    100.00 
+             nebraska |     50.46      49.54 |    100.00 
+               nevada |     57.48      42.52 |    100.00 
+        new hampshire |     56.53      43.47 |    100.00 
+           new jersey |     62.25      37.75 |    100.00 
+           new mexico |     66.58      33.42 |    100.00 
+             new york |     65.78      34.22 |    100.00 
+       north carolina |     64.72      35.28 |    100.00 
+         north dakota |     42.65      57.35 |    100.00 
+                 ohio |     61.31      38.69 |    100.00 
+             oklahoma |     61.30      38.70 |    100.00 
+               oregon |     59.07      40.93 |    100.00 
+         pennsylvania |     61.88      38.12 |    100.00 
+         rhode island |     65.20      34.80 |    100.00 
+       south carolina |     66.24      33.76 |    100.00 
+         south dakota |     47.63      52.37 |    100.00 
+            tennessee |     65.52      34.48 |    100.00 
+                texas |     59.18      40.82 |    100.00 
+                 utah |     52.41      47.59 |    100.00 
+              vermont |     58.74      41.26 |    100.00 
+             virginia |     58.78      41.22 |    100.00 
+           washington |     58.76      41.24 |    100.00 
+        west virginia |     71.15      28.85 |    100.00 
+            wisconsin |     58.48      41.52 |    100.00 
+              wyoming |     50.11      49.89 |    100.00 
+----------------------+----------------------+----------
+                Total |     62.16      37.84 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2019
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     66.68      33.32 |    100.00 
+               alaska |     59.54      40.46 |    100.00 
+              arizona |     60.63      39.37 |    100.00 
+             arkansas |     66.99      33.01 |    100.00 
+           california |     61.33      38.67 |    100.00 
+             colorado |     52.09      47.91 |    100.00 
+          connecticut |     56.50      43.50 |    100.00 
+             delaware |     57.81      42.19 |    100.00 
+ district of columbia |     66.78      33.22 |    100.00 
+              florida |     63.49      36.51 |    100.00 
+              georgia |     63.68      36.32 |    100.00 
+               hawaii |     59.51      40.49 |    100.00 
+                idaho |     56.63      43.37 |    100.00 
+             illinois |     60.96      39.04 |    100.00 
+              indiana |     59.98      40.02 |    100.00 
+                 iowa |     53.54      46.46 |    100.00 
+               kansas |     55.28      44.72 |    100.00 
+             kentucky |     67.21      32.79 |    100.00 
+            louisiana |     64.67      35.33 |    100.00 
+                maine |     63.83      36.17 |    100.00 
+             maryland |     55.58      44.42 |    100.00 
+        massachusetts |     58.57      41.43 |    100.00 
+             michigan |     63.85      36.15 |    100.00 
+            minnesota |     51.90      48.10 |    100.00 
+          mississippi |     68.56      31.44 |    100.00 
+             missouri |     62.89      37.11 |    100.00 
+              montana |     53.71      46.29 |    100.00 
+             nebraska |     47.61      52.39 |    100.00 
+               nevada |     60.67      39.33 |    100.00 
+        new hampshire |     55.55      44.45 |    100.00 
+           new jersey |     59.38      40.62 |    100.00 
+           new mexico |     64.04      35.96 |    100.00 
+             new york |     64.48      35.52 |    100.00 
+       north carolina |     64.07      35.93 |    100.00 
+         north dakota |     42.21      57.79 |    100.00 
+                 ohio |     60.27      39.73 |    100.00 
+             oklahoma |     60.02      39.98 |    100.00 
+               oregon |     54.92      45.08 |    100.00 
+         pennsylvania |     61.09      38.91 |    100.00 
+         rhode island |     64.72      35.28 |    100.00 
+       south carolina |     65.45      34.55 |    100.00 
+         south dakota |     48.17      51.83 |    100.00 
+            tennessee |     64.52      35.48 |    100.00 
+                texas |     57.42      42.58 |    100.00 
+                 utah |     49.16      50.84 |    100.00 
+              vermont |     56.79      43.21 |    100.00 
+             virginia |     55.96      44.04 |    100.00 
+           washington |     57.23      42.77 |    100.00 
+        west virginia |     68.53      31.47 |    100.00 
+            wisconsin |     56.88      43.12 |    100.00 
+              wyoming |     48.57      51.43 |    100.00 
+----------------------+----------------------+----------
+                Total |     60.83      39.17 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2020
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     67.46      32.54 |    100.00 
+               alaska |     57.85      42.15 |    100.00 
+              arizona |     60.21      39.79 |    100.00 
+             arkansas |     68.32      31.68 |    100.00 
+           california |     61.60      38.40 |    100.00 
+             colorado |     55.54      44.46 |    100.00 
+          connecticut |     60.55      39.45 |    100.00 
+             delaware |     54.18      45.82 |    100.00 
+ district of columbia |     70.10      29.90 |    100.00 
+              florida |     62.99      37.01 |    100.00 
+              georgia |     61.50      38.50 |    100.00 
+               hawaii |     53.01      46.99 |    100.00 
+                idaho |     56.08      43.92 |    100.00 
+             illinois |     58.48      41.52 |    100.00 
+              indiana |     59.68      40.32 |    100.00 
+                 iowa |     53.76      46.24 |    100.00 
+               kansas |     54.00      46.00 |    100.00 
+             kentucky |     65.78      34.22 |    100.00 
+            louisiana |     64.44      35.56 |    100.00 
+                maine |     63.63      36.37 |    100.00 
+             maryland |     57.73      42.27 |    100.00 
+        massachusetts |     60.44      39.56 |    100.00 
+             michigan |     65.21      34.79 |    100.00 
+            minnesota |     55.74      44.26 |    100.00 
+          mississippi |     70.18      29.82 |    100.00 
+             missouri |     61.72      38.28 |    100.00 
+              montana |     56.75      43.25 |    100.00 
+             nebraska |     49.99      50.01 |    100.00 
+               nevada |     61.68      38.32 |    100.00 
+        new hampshire |     54.37      45.63 |    100.00 
+           new jersey |     57.35      42.65 |    100.00 
+           new mexico |     67.96      32.04 |    100.00 
+             new york |     64.63      35.37 |    100.00 
+       north carolina |     64.82      35.18 |    100.00 
+         north dakota |     44.19      55.81 |    100.00 
+                 ohio |     61.53      38.47 |    100.00 
+             oklahoma |     59.82      40.18 |    100.00 
+               oregon |     61.98      38.02 |    100.00 
+         pennsylvania |     61.51      38.49 |    100.00 
+         rhode island |     58.96      41.04 |    100.00 
+       south carolina |     64.69      35.31 |    100.00 
+         south dakota |     51.05      48.95 |    100.00 
+            tennessee |     65.19      34.81 |    100.00 
+                texas |     56.93      43.07 |    100.00 
+                 utah |     50.21      49.79 |    100.00 
+              vermont |     66.34      33.66 |    100.00 
+             virginia |     57.44      42.56 |    100.00 
+           washington |     59.43      40.57 |    100.00 
+        west virginia |     71.20      28.80 |    100.00 
+            wisconsin |     55.96      44.04 |    100.00 
+              wyoming |     55.46      44.54 |    100.00 
+----------------------+----------------------+----------
+                Total |     61.15      38.85 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2021
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     67.56      32.44 |    100.00 
+               alaska |     52.21      47.79 |    100.00 
+              arizona |     55.55      44.45 |    100.00 
+             arkansas |     64.14      35.86 |    100.00 
+           california |     59.97      40.03 |    100.00 
+             colorado |     49.19      50.81 |    100.00 
+          connecticut |     55.65      44.35 |    100.00 
+             delaware |     53.18      46.82 |    100.00 
+ district of columbia |     58.86      41.14 |    100.00 
+              florida |     60.44      39.56 |    100.00 
+              georgia |     60.41      39.59 |    100.00 
+               hawaii |     57.25      42.75 |    100.00 
+                idaho |     48.97      51.03 |    100.00 
+             illinois |     57.96      42.04 |    100.00 
+              indiana |     58.93      41.07 |    100.00 
+                 iowa |     54.24      45.76 |    100.00 
+               kansas |     55.81      44.19 |    100.00 
+             kentucky |     66.05      33.95 |    100.00 
+            louisiana |     65.69      34.31 |    100.00 
+                maine |     64.53      35.47 |    100.00 
+             maryland |     53.54      46.46 |    100.00 
+        massachusetts |     58.04      41.96 |    100.00 
+             michigan |     62.54      37.46 |    100.00 
+            minnesota |     49.37      50.63 |    100.00 
+          mississippi |     66.26      33.74 |    100.00 
+             missouri |     58.15      41.85 |    100.00 
+              montana |     56.68      43.32 |    100.00 
+             nebraska |     47.66      52.34 |    100.00 
+               nevada |     56.72      43.28 |    100.00 
+        new hampshire |     54.27      45.73 |    100.00 
+           new jersey |     58.89      41.11 |    100.00 
+           new mexico |     64.56      35.44 |    100.00 
+             new york |     62.83      37.17 |    100.00 
+       north carolina |     60.59      39.41 |    100.00 
+         north dakota |     42.92      57.08 |    100.00 
+                 ohio |     60.54      39.46 |    100.00 
+             oklahoma |     58.96      41.04 |    100.00 
+               oregon |     57.81      42.19 |    100.00 
+         pennsylvania |     60.09      39.91 |    100.00 
+         rhode island |     58.36      41.64 |    100.00 
+       south carolina |     63.45      36.55 |    100.00 
+         south dakota |     49.33      50.67 |    100.00 
+            tennessee |     64.15      35.85 |    100.00 
+                texas |     53.42      46.58 |    100.00 
+                 utah |     46.26      53.74 |    100.00 
+              vermont |     60.77      39.23 |    100.00 
+             virginia |     54.51      45.49 |    100.00 
+           washington |     57.22      42.78 |    100.00 
+        west virginia |     70.33      29.67 |    100.00 
+            wisconsin |     53.98      46.02 |    100.00 
+              wyoming |     47.63      52.37 |    100.00 
+----------------------+----------------------+----------
+                Total |     58.89      41.11 |    100.00 
+
+
+. 
+. /* all epop by state by year, ages 21 to 64 */
+. bysort year: tab statefip epop [aw=perwt] if agewk==1 & inst==0, row nofreq
+
+--------------------------------------------------------------------------------------------------
+-> year = 2016
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     31.53      68.47 |    100.00 
+               alaska |     25.85      74.15 |    100.00 
+              arizona |     28.50      71.50 |    100.00 
+             arkansas |     29.51      70.49 |    100.00 
+           california |     26.99      73.01 |    100.00 
+             colorado |     22.03      77.97 |    100.00 
+          connecticut |     22.32      77.68 |    100.00 
+             delaware |     25.06      74.94 |    100.00 
+ district of columbia |     23.85      76.15 |    100.00 
+              florida |     27.50      72.50 |    100.00 
+              georgia |     27.09      72.91 |    100.00 
+               hawaii |     22.01      77.99 |    100.00 
+                idaho |     26.38      73.62 |    100.00 
+             illinois |     24.24      75.76 |    100.00 
+              indiana |     24.26      75.74 |    100.00 
+                 iowa |     19.62      80.38 |    100.00 
+               kansas |     21.63      78.37 |    100.00 
+             kentucky |     30.29      69.71 |    100.00 
+            louisiana |     30.95      69.05 |    100.00 
+                maine |     25.16      74.84 |    100.00 
+             maryland |     21.11      78.89 |    100.00 
+        massachusetts |     21.76      78.24 |    100.00 
+             michigan |     27.54      72.46 |    100.00 
+            minnesota |     17.80      82.20 |    100.00 
+          mississippi |     32.16      67.84 |    100.00 
+             missouri |     25.13      74.87 |    100.00 
+              montana |     24.09      75.91 |    100.00 
+             nebraska |     17.95      82.05 |    100.00 
+               nevada |     26.37      73.63 |    100.00 
+        new hampshire |     18.99      81.01 |    100.00 
+           new jersey |     23.64      76.36 |    100.00 
+           new mexico |     31.75      68.25 |    100.00 
+             new york |     26.19      73.81 |    100.00 
+       north carolina |     27.02      72.98 |    100.00 
+         north dakota |     17.66      82.34 |    100.00 
+                 ohio |     25.23      74.77 |    100.00 
+             oklahoma |     28.49      71.51 |    100.00 
+               oregon |     26.38      73.62 |    100.00 
+         pennsylvania |     25.49      74.51 |    100.00 
+         rhode island |     24.89      75.11 |    100.00 
+       south carolina |     27.89      72.11 |    100.00 
+         south dakota |     18.75      81.25 |    100.00 
+            tennessee |     28.48      71.52 |    100.00 
+                texas |     25.61      74.39 |    100.00 
+                 utah |     23.45      76.55 |    100.00 
+              vermont |     20.28      79.72 |    100.00 
+             virginia |     22.75      77.25 |    100.00 
+           washington |     25.50      74.50 |    100.00 
+        west virginia |     35.69      64.31 |    100.00 
+            wisconsin |     20.55      79.45 |    100.00 
+              wyoming |     23.61      76.39 |    100.00 
+----------------------+----------------------+----------
+                Total |     25.71      74.29 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2017
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     32.27      67.73 |    100.00 
+               alaska |     25.38      74.62 |    100.00 
+              arizona |     27.10      72.90 |    100.00 
+             arkansas |     29.39      70.61 |    100.00 
+           california |     26.09      73.91 |    100.00 
+             colorado |     20.85      79.15 |    100.00 
+          connecticut |     23.02      76.98 |    100.00 
+             delaware |     27.01      72.99 |    100.00 
+ district of columbia |     22.31      77.69 |    100.00 
+              florida |     27.00      73.00 |    100.00 
+              georgia |     26.21      73.79 |    100.00 
+               hawaii |     21.58      78.42 |    100.00 
+                idaho |     25.90      74.10 |    100.00 
+             illinois |     24.01      75.99 |    100.00 
+              indiana |     24.53      75.47 |    100.00 
+                 iowa |     18.48      81.52 |    100.00 
+               kansas |     21.55      78.45 |    100.00 
+             kentucky |     29.87      70.13 |    100.00 
+            louisiana |     30.26      69.74 |    100.00 
+                maine |     25.00      75.00 |    100.00 
+             maryland |     21.20      78.80 |    100.00 
+        massachusetts |     21.58      78.42 |    100.00 
+             michigan |     27.03      72.97 |    100.00 
+            minnesota |     17.63      82.37 |    100.00 
+          mississippi |     31.99      68.01 |    100.00 
+             missouri |     24.29      75.71 |    100.00 
+              montana |     22.45      77.55 |    100.00 
+             nebraska |     17.20      82.80 |    100.00 
+               nevada |     25.30      74.70 |    100.00 
+        new hampshire |     18.93      81.07 |    100.00 
+           new jersey |     22.43      77.57 |    100.00 
+           new mexico |     32.38      67.62 |    100.00 
+             new york |     25.16      74.84 |    100.00 
+       north carolina |     25.83      74.17 |    100.00 
+         north dakota |     16.94      83.06 |    100.00 
+                 ohio |     24.69      75.31 |    100.00 
+             oklahoma |     28.05      71.95 |    100.00 
+               oregon |     25.20      74.80 |    100.00 
+         pennsylvania |     24.71      75.29 |    100.00 
+         rhode island |     22.90      77.10 |    100.00 
+       south carolina |     27.44      72.56 |    100.00 
+         south dakota |     17.79      82.21 |    100.00 
+            tennessee |     26.70      73.30 |    100.00 
+                texas |     25.44      74.56 |    100.00 
+                 utah |     21.61      78.39 |    100.00 
+              vermont |     22.76      77.24 |    100.00 
+             virginia |     22.14      77.86 |    100.00 
+           washington |     23.89      76.11 |    100.00 
+        west virginia |     36.05      63.95 |    100.00 
+            wisconsin |     19.90      80.10 |    100.00 
+              wyoming |     21.53      78.47 |    100.00 
+----------------------+----------------------+----------
+                Total |     25.06      74.94 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2018
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     31.34      68.66 |    100.00 
+               alaska |     24.62      75.38 |    100.00 
+              arizona |     26.74      73.26 |    100.00 
+             arkansas |     29.11      70.89 |    100.00 
+           california |     25.25      74.75 |    100.00 
+             colorado |     20.15      79.85 |    100.00 
+          connecticut |     21.68      78.32 |    100.00 
+             delaware |     24.43      75.57 |    100.00 
+ district of columbia |     21.81      78.19 |    100.00 
+              florida |     26.10      73.90 |    100.00 
+              georgia |     25.23      74.77 |    100.00 
+               hawaii |     21.12      78.88 |    100.00 
+                idaho |     24.83      75.17 |    100.00 
+             illinois |     23.04      76.96 |    100.00 
+              indiana |     23.77      76.23 |    100.00 
+                 iowa |     18.33      81.67 |    100.00 
+               kansas |     20.53      79.47 |    100.00 
+             kentucky |     29.53      70.47 |    100.00 
+            louisiana |     29.53      70.47 |    100.00 
+                maine |     22.59      77.41 |    100.00 
+             maryland |     20.42      79.58 |    100.00 
+        massachusetts |     21.31      78.69 |    100.00 
+             michigan |     26.23      73.77 |    100.00 
+            minnesota |     17.72      82.28 |    100.00 
+          mississippi |     32.06      67.94 |    100.00 
+             missouri |     24.14      75.86 |    100.00 
+              montana |     21.77      78.23 |    100.00 
+             nebraska |     17.54      82.46 |    100.00 
+               nevada |     25.50      74.50 |    100.00 
+        new hampshire |     19.97      80.03 |    100.00 
+           new jersey |     21.57      78.43 |    100.00 
+           new mexico |     31.02      68.98 |    100.00 
+             new york |     24.58      75.42 |    100.00 
+       north carolina |     25.00      75.00 |    100.00 
+         north dakota |     16.61      83.39 |    100.00 
+                 ohio |     23.82      76.18 |    100.00 
+             oklahoma |     26.57      73.43 |    100.00 
+               oregon |     24.53      75.47 |    100.00 
+         pennsylvania |     23.43      76.57 |    100.00 
+         rhode island |     23.48      76.52 |    100.00 
+       south carolina |     26.43      73.57 |    100.00 
+         south dakota |     18.90      81.10 |    100.00 
+            tennessee |     27.28      72.72 |    100.00 
+                texas |     24.93      75.07 |    100.00 
+                 utah |     21.98      78.02 |    100.00 
+              vermont |     19.66      80.34 |    100.00 
+             virginia |     21.67      78.33 |    100.00 
+           washington |     23.46      76.54 |    100.00 
+        west virginia |     34.05      65.95 |    100.00 
+            wisconsin |     19.32      80.68 |    100.00 
+              wyoming |     20.27      79.73 |    100.00 
+----------------------+----------------------+----------
+                Total |     24.38      75.62 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2019
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     29.71      70.29 |    100.00 
+               alaska |     27.31      72.69 |    100.00 
+              arizona |     25.93      74.07 |    100.00 
+             arkansas |     27.77      72.23 |    100.00 
+           california |     24.47      75.53 |    100.00 
+             colorado |     19.80      80.20 |    100.00 
+          connecticut |     21.49      78.51 |    100.00 
+             delaware |     22.78      77.22 |    100.00 
+ district of columbia |     21.29      78.71 |    100.00 
+              florida |     24.73      75.27 |    100.00 
+              georgia |     25.11      74.89 |    100.00 
+               hawaii |     20.70      79.30 |    100.00 
+                idaho |     23.51      76.49 |    100.00 
+             illinois |     22.42      77.58 |    100.00 
+              indiana |     23.20      76.80 |    100.00 
+                 iowa |     18.48      81.52 |    100.00 
+               kansas |     20.47      79.53 |    100.00 
+             kentucky |     29.05      70.95 |    100.00 
+            louisiana |     29.46      70.54 |    100.00 
+                maine |     23.14      76.86 |    100.00 
+             maryland |     20.24      79.76 |    100.00 
+        massachusetts |     19.60      80.40 |    100.00 
+             michigan |     25.33      74.67 |    100.00 
+            minnesota |     16.81      83.19 |    100.00 
+          mississippi |     30.67      69.33 |    100.00 
+             missouri |     23.78      76.22 |    100.00 
+              montana |     22.13      77.87 |    100.00 
+             nebraska |     16.16      83.84 |    100.00 
+               nevada |     24.66      75.34 |    100.00 
+        new hampshire |     19.20      80.80 |    100.00 
+           new jersey |     21.28      78.72 |    100.00 
+           new mexico |     28.83      71.17 |    100.00 
+             new york |     23.40      76.60 |    100.00 
+       north carolina |     24.82      75.18 |    100.00 
+         north dakota |     15.14      84.86 |    100.00 
+                 ohio |     23.40      76.60 |    100.00 
+             oklahoma |     26.45      73.55 |    100.00 
+               oregon |     24.27      75.73 |    100.00 
+         pennsylvania |     23.33      76.67 |    100.00 
+         rhode island |     21.63      78.37 |    100.00 
+       south carolina |     26.16      73.84 |    100.00 
+         south dakota |     17.26      82.74 |    100.00 
+            tennessee |     25.93      74.07 |    100.00 
+                texas |     23.86      76.14 |    100.00 
+                 utah |     20.17      79.83 |    100.00 
+              vermont |     19.78      80.22 |    100.00 
+             virginia |     21.18      78.82 |    100.00 
+           washington |     22.61      77.39 |    100.00 
+        west virginia |     32.91      67.09 |    100.00 
+            wisconsin |     19.25      80.75 |    100.00 
+              wyoming |     22.06      77.94 |    100.00 
+----------------------+----------------------+----------
+                Total |     23.65      76.35 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2020
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     30.70      69.30 |    100.00 
+               alaska |     27.83      72.17 |    100.00 
+              arizona |     27.85      72.15 |    100.00 
+             arkansas |     30.58      69.42 |    100.00 
+           california |     27.84      72.16 |    100.00 
+             colorado |     22.41      77.59 |    100.00 
+          connecticut |     23.63      76.37 |    100.00 
+             delaware |     25.69      74.31 |    100.00 
+ district of columbia |     25.34      74.66 |    100.00 
+              florida |     26.66      73.34 |    100.00 
+              georgia |     27.54      72.46 |    100.00 
+               hawaii |     24.22      75.78 |    100.00 
+                idaho |     25.02      74.98 |    100.00 
+             illinois |     24.53      75.47 |    100.00 
+              indiana |     25.10      74.90 |    100.00 
+                 iowa |     20.10      79.90 |    100.00 
+               kansas |     21.63      78.37 |    100.00 
+             kentucky |     29.59      70.41 |    100.00 
+            louisiana |     32.18      67.82 |    100.00 
+                maine |     24.92      75.08 |    100.00 
+             maryland |     22.58      77.42 |    100.00 
+        massachusetts |     23.48      76.52 |    100.00 
+             michigan |     28.82      71.18 |    100.00 
+            minnesota |     19.77      80.23 |    100.00 
+          mississippi |     32.27      67.73 |    100.00 
+             missouri |     24.94      75.06 |    100.00 
+              montana |     24.17      75.83 |    100.00 
+             nebraska |     18.68      81.32 |    100.00 
+               nevada |     29.50      70.50 |    100.00 
+        new hampshire |     21.55      78.45 |    100.00 
+           new jersey |     24.55      75.45 |    100.00 
+           new mexico |     32.98      67.02 |    100.00 
+             new york |     28.00      72.00 |    100.00 
+       north carolina |     26.98      73.02 |    100.00 
+         north dakota |     17.30      82.70 |    100.00 
+                 ohio |     26.00      74.00 |    100.00 
+             oklahoma |     28.33      71.67 |    100.00 
+               oregon |     26.73      73.27 |    100.00 
+         pennsylvania |     25.56      74.44 |    100.00 
+         rhode island |     24.69      75.31 |    100.00 
+       south carolina |     28.41      71.59 |    100.00 
+         south dakota |     18.22      81.78 |    100.00 
+            tennessee |     27.90      72.10 |    100.00 
+                texas |     26.32      73.68 |    100.00 
+                 utah |     21.92      78.08 |    100.00 
+              vermont |     23.34      76.66 |    100.00 
+             virginia |     23.15      76.85 |    100.00 
+           washington |     25.45      74.55 |    100.00 
+        west virginia |     34.11      65.89 |    100.00 
+            wisconsin |     20.96      79.04 |    100.00 
+              wyoming |     22.06      77.94 |    100.00 
+----------------------+----------------------+----------
+                Total |     26.24      73.76 |    100.00 
+
+--------------------------------------------------------------------------------------------------
+-> year = 2021
+
+                      |   RECODE of lfstat
+                      | (Labor-force status)
+    state (fips code) | unemploye   employed |     Total
+----------------------+----------------------+----------
+              alabama |     29.68      70.32 |    100.00 
+               alaska |     25.91      74.09 |    100.00 
+              arizona |     26.02      73.98 |    100.00 
+             arkansas |     27.57      72.43 |    100.00 
+           california |     27.50      72.50 |    100.00 
+             colorado |     21.29      78.71 |    100.00 
+          connecticut |     22.94      77.06 |    100.00 
+             delaware |     24.52      75.48 |    100.00 
+ district of columbia |     22.88      77.12 |    100.00 
+              florida |     25.89      74.11 |    100.00 
+              georgia |     25.98      74.02 |    100.00 
+               hawaii |     25.12      74.88 |    100.00 
+                idaho |     23.11      76.89 |    100.00 
+             illinois |     24.75      75.25 |    100.00 
+              indiana |     24.26      75.74 |    100.00 
+                 iowa |     19.45      80.55 |    100.00 
+               kansas |     21.85      78.15 |    100.00 
+             kentucky |     29.39      70.61 |    100.00 
+            louisiana |     31.27      68.73 |    100.00 
+                maine |     24.69      75.31 |    100.00 
+             maryland |     22.03      77.97 |    100.00 
+        massachusetts |     21.98      78.02 |    100.00 
+             michigan |     27.73      72.27 |    100.00 
+            minnesota |     18.72      81.28 |    100.00 
+          mississippi |     31.35      68.65 |    100.00 
+             missouri |     23.62      76.38 |    100.00 
+              montana |     24.39      75.61 |    100.00 
+             nebraska |     17.11      82.89 |    100.00 
+               nevada |     28.70      71.30 |    100.00 
+        new hampshire |     20.28      79.72 |    100.00 
+           new jersey |     24.33      75.67 |    100.00 
+           new mexico |     32.19      67.81 |    100.00 
+             new york |     27.45      72.55 |    100.00 
+       north carolina |     25.81      74.19 |    100.00 
+         north dakota |     17.50      82.50 |    100.00 
+                 ohio |     24.64      75.36 |    100.00 
+             oklahoma |     27.59      72.41 |    100.00 
+               oregon |     26.59      73.41 |    100.00 
+         pennsylvania |     24.62      75.38 |    100.00 
+         rhode island |     24.19      75.81 |    100.00 
+       south carolina |     27.60      72.40 |    100.00 
+         south dakota |     18.16      81.84 |    100.00 
+            tennessee |     26.82      73.18 |    100.00 
+                texas |     25.57      74.43 |    100.00 
+                 utah |     21.53      78.47 |    100.00 
+              vermont |     22.52      77.48 |    100.00 
+             virginia |     22.22      77.78 |    100.00 
+           washington |     25.10      74.90 |    100.00 
+        west virginia |     34.22      65.78 |    100.00 
+            wisconsin |     20.35      79.65 |    100.00 
+              wyoming |     21.82      78.18 |    100.00 
+----------------------+----------------------+----------
+                Total |     25.46      74.54 |    100.00 
+
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/glooper/Dropbox (CEPR)/Data/homestata/projects/disability/log/2022_expertwitne
+> ss_ACS/cepr_tables_ew_2016-2021.log
+  log type:  text
+ closed on:   2 Dec 2022, 13:08:26
+--------------------------------------------------------------------------------------------------
